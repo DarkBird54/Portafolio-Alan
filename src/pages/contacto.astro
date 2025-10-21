@@ -1,0 +1,176 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contacto" sideBarActiveItemID="contact">
+  <section class="relative min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-blue-50 to-white p-6 overflow-hidden">
+    
+    <!-- Partículas de fondo -->
+    <canvas id="particles" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+    <div class="relative z-10 text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4 animate-fadeIn">¡Hablemos!</h1>
+      <p class="text-gray-600 text-lg md:text-xl animate-fadeIn delay-200">
+        ¿Tienes un proyecto o idea? Contáctame y trabajemos juntos.
+      </p>
+    </div>
+
+    <div class="flex flex-col md:flex-row w-full max-w-6xl gap-10 relative z-10">
+
+      <!-- Formulario de contacto -->
+      <form 
+        id="contactForm"
+        class="flex-1 bg-white shadow-xl rounded-2xl p-8 space-y-6 animate-fadeIn delay-400 transform transition-transform hover:-translate-y-2 hover:scale-105"
+        action="https://formsubmit.co/ing.alanmatos@gmail.com" 
+        method="POST"
+      >
+        <h2 class="text-2xl font-semibold text-blue-800 mb-4">Contactame</h2>
+
+        <div class="flex flex-col">
+          <label class="mb-2 font-medium text-gray-700">Nombre</label>
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Tu nombre" 
+            required
+            class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 transition shadow-inner"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="mb-2 font-medium text-gray-700">Email</label>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Tu correo electrónico" 
+            required
+            class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 transition shadow-inner"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="mb-2 font-medium text-gray-700">Mensaje</label>
+          <textarea 
+            name="message" 
+            rows="5" 
+            placeholder="Escribe tu mensaje..."
+            required
+            class="border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-blue-500 transition shadow-inner resize-none"
+          ></textarea>
+        </div>
+
+        <button 
+          type="submit"
+          class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full w-full hover:bg-blue-700 hover:scale-105 transition transform shadow-lg"
+        >
+          Enviar Mensaje
+        </button>
+
+        <p id="formMessage" class="mt-2 text-sm text-green-600 hidden">¡Mensaje enviado con éxito!</p>
+      </form>
+
+      <!-- Sección de contacto directo / redes sociales -->
+      <div class="flex-1 flex flex-col justify-center items-center bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl p-8 space-y-6 animate-fadeIn delay-600 shadow-lg transform transition-transform hover:-translate-y-2 hover:scale-105">
+        <h2 class="text-2xl font-semibold text-blue-800">Conéctate conmigo</h2>
+        <p class="text-gray-700 text-center">Sígueme en mis redes o escríbeme directamente.</p>
+
+        <div class="flex gap-6 mt-4">
+          <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="text-blue-700 hover:text-blue-900 transition transform hover:scale-125">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.1c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 6 3.33 6 7.67V24h-5v-7.5c0-1.8-.03-4.12-2.5-4.12-2.5 0-2.87 1.94-2.87 3.98V24h-5V8z"/></svg>
+          </a>
+          <a href="https://github.com/tu-usuario" target="_blank" class="text-gray-800 hover:text-black transition transform hover:scale-125">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.774.418-1.304.762-1.604-2.665-.3-5.466-1.332-5.466-5.931 0-1.31.468-2.38 1.235-3.22-.123-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.46 11.46 0 013-.404c1.02.004 2.04.138 3 .404 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.242 2.873.12 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.475 5.921.43.37.813 1.102.813 2.222 0 1.604-.015 2.896-.015 3.286 0 .322.216.699.825.581C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="mailto:ing.alanmatos@gmail.com" class="text-red-600 hover:text-red-800 transition transform hover:scale-125">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12.713l11.985-7.713v13.5c0 .828-.672 1.5-1.5 1.5H1.5C.672 20 0 19.328 0 18.5v-13.5L12 12.713zM12 0L0 7.987V8.5l12 7.713 12-7.713v-.513L12 0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script type="module">
+  // Validación y feedback
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMessage');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+          'Accept': 'application/json' 
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        msg.textContent = "¡Mensaje enviado con éxito!";
+        msg.classList.remove('hidden', 'text-red-600');
+        msg.classList.add('text-green-600');
+        form.reset();
+      } else {
+        msg.textContent = "Error al enviar: " + (data.message || 'Intenta de nuevo.');
+        msg.classList.remove('hidden', 'text-green-600');
+        msg.classList.add('text-red-600');
+      }
+    })
+    .catch(err => {
+      msg.textContent = "Error de red. Por favor, intenta de nuevo.";
+      msg.classList.remove('hidden', 'text-green-600');
+      msg.classList.add('text-red-600');
+      console.error('Fetch error:', err);
+    });
+  });
+
+  // Partículas de fondo (Tu código de partículas sigue aquí...)
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  // ...el resto de tu script de partículas no necesita cambios...
+  canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 3 + 1,
+        dx: (Math.random() - 0.5) * 1,
+        dy: (Math.random() - 0.5) * 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      particles.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59,130,246,0.5)';
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+</script>
+
+</BaseLayout>
+
+<style>
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.animate-fadeIn { animation: fadeIn 0.8s ease forwards; opacity: 0; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-600 { animation-delay: 0.6s; }
+</style>

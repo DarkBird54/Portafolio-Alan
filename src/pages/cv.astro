@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+
+const certificados = [
+  { name: "CyberSecurity Essentials", file: "/certificados/Cybersecurity_Essentials_certificate_8119110132-utchetumal-edu-mx_56ab7203-baf4-444d-8d88-3520b82a9131.pdf", color: "green" },
+  { name: "CCNA: Enterprise Networking, Security, and Automation", file: "/certificados/CCNA-_Enterprise_Networking-_Security-_and_Automation_certificate_8119110132-utchetumal-edu-mx_476953f5-c455-42da-8b24-f9d47c0bb1ad.pdf", color: "green" },
+  { name: "Introduction to CyberSecurity", file: "/certificados/Introduction_to_Cybersecurity_certificate_8119110132-utchetumal-edu-mx_6fefaf86-849c-4573-b7dd-8a55e10f0649.pdf", color: "purple" },
+  { name: "IoT Fundamentals: Connecting Things", file: "/certificados/IoT_Fundamentals-_Connecting_Things_certificate_8119110132-utchetumal-edu-mx_6ac98859-d606-4399-bf1e-f7574d3185b4.pdf", color: "blue" },
+  { name: "Partner: NDG Linux Essentials", file: "/certificados/Partner-_NDG_Linux_Essentials_certificate_8119110132-utchetumal-edu-mx_b4d25fe6-1e7f-41de-80de-979b8a60b82f.pdf", color: "purple" },
+  { name: "CCNAv7: Switching, Routing, and Wireless Essentials", file: "/certificados/CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_8119110132-utchetumal-edu-mx_caa322ca-0ce9-4634-866d-3cd40d2b8412.pdf", color: "green" },
+  { name: "CCNAv7: Introduction to Networks", file: "/certificados/CCNA-_Introduction_to_Networks_certificate_8119110132-utchetumal-edu-mx_df375e56-a9dd-4612-8fc5-8fb6e5abdd7b.pdf", color: "green" }
+];
+
+
+const skills = [
+  // --- Iconos de Tecnologías (desde cdn.jsdelivr.net/gh/devicons) ---
+  { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", color: "orange", percent: 95 },
+  { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", color: "blue", percent: 95 },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", color: "yellow", percent: 70},
+  { name: "Tailwind", icon: "/public/Tailwind.png", color: "cyan", percent: 90 },
+  { name: "Laravel", icon: "/public/laravel.png", color: "red", percent: 90 },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", color: "green", percent: 80 },
+  { name: "AstroJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg", color: "purple", percent: 80 },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", color: "blue", percent: 80 },
+
+  // --- Iconos de Habilidades (desde svgrepo.com) ---
+  { name: "Gestión de Estado", icon: "#", color: "blue", percent: 90 },
+  { name: "Integración de APIs", icon: "#", color: "green", percent: 70},
+  { name: "Manejo de mapas", icon: "/public/google.png", color: "red", percent: 85 },
+  { name: "Resolución de Problemas", icon: "/public/download.jpeg", color: "yellow", percent: 95 },
+  { name: "Diseñador creativo", icon: "/public/images.jpeg", color: "purple", percent: 90 },
+  { name: "Trabajo en Equipo", icon: "/public/images(1).jpeg", color: "pink", percent: 90 }
+];
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+
+  <section class="mb-10">
+    <h1 class="text-4xl font-extrabold mb-4" data-aos="fade-down" data-aos-duration="800">Perfil</h1>
+    <p class="text-lg text-justify text-gray-700" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      Soy Ingeniero en Gestión y Desarrollo de Software, apasionado por crear soluciones tecnológicas que aporten valor real. He participado en proyectos destacados como <strong>Safe Taxi</strong>, <strong>UQROO APP</strong> y un sistema de cableado estructurado para el Instituto Electoral de Quintana Roo.
+      <br /><br />
+      Trabajo con tecnologías como Azure, Flutter, Dart y Laravel, integrando APIs y servicios como Google Maps. Además, cuento con experiencia en infraestructura de red, implementando Access Points Ubiquiti y Switches Cisco y Aruba para garantizar conectividad eficiente.
+      <br /><br />
+      Mi enfoque combina innovación y funcionalidad, desarrollando soluciones que realmente marcan la diferencia.
+    </p>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-5" data-aos="fade-right">Educación</h2>
+    <div class="grid gap-6" data-aos="fade-up">
+      <TimeLineElement title="Técnico en Programación" subtitle="[2016] - [2019] | CBTIS 214, Chetumal, Q.R., México" />
+      <TimeLineElement title="TSU en Tecnologías de la Información - Desarrollo de Software Multiplataforma" subtitle="[2021] - [2023] | Universidad Tecnológica de Chetumal, Q.R., México" />
+      <TimeLineElement title="Ingeniero en Desarrollo y Gestión de Software" subtitle="[2023] - [2025] | Universidad Tecnológica de Chetumal, Q.R., México" />
+    </div>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-5" data-aos="fade-right">Experiencia</h2>
+    <div class="grid gap-6" data-aos="fade-up">
+      <TimeLineElement title="Instituto de Movilidad de Quintana Roo" subtitle="25 Jul 2020 - 25 Jul 2022 | Chetumal, Q.R., México">
+        <p>Participe en el desarrollo del proyecto de <strong>Taxi Seguro</strong> en donde Desarrollé una aplicación orientada a mejorar la seguridad del transporte público en el estado. SafeTaxi permite a los usuarios verificar unidades y conductores en tiempo real, reportar incidentes y consultar información oficial del servicio. Implementé funcionalidades de geolocalización, autenticación segura y un panel administrativo para el monitoreo de datos, contribuyendo a una movilidad más confiable y transparente.</p>
+      </TimeLineElement>
+      <TimeLineElement title="Instituto Electoral de Quintana Roo" subtitle="03 Oct 2023 - 30 Nov 2024 | Chetumal, Q.R., México">
+        <p>En el Instituto Electoral, fui responsable de diversas tareas técnicas relacionadas con la infraestructura de red. Esto incluyó la implementación de cableado estructurado para garantizar una conectividad estable y eficiente en todo el edificio. Asimismo, configuré switches para optimizar el flujo de datos y segmenté VLANs para separar las redes por áreas, lo que mejoró la seguridad y el rendimiento del sistema. Además, instalé repetidores de la marca Ubiquiti, que ampliaron la cobertura de la red inalámbrica, asegurando una conectividad confiable en todas las áreas del edificio roident.</p>
+      </TimeLineElement>
+      <TimeLineElement title="Universidad Autónoma de Quintana Roo" subtitle="19 Nov 2024 - Actualmente | Chetumal, Q.R., México">
+        <p>En la Universidad Autónoma de Quintana Roo, participé como responsable del desarrollo de la aplicación móvil institucional, diseñada para mejorar la experiencia digital de la comunidad universitaria. Durante el proyecto, implementé diversas tecnologías con el propósito de optimizar la usabilidad y seguridad del sistema. Utilicé Microsoft Azure para gestionar un inicio de sesión seguro y eficiente, e integré Google Maps para ofrecer un mapa interactivo del campus. Entre las funcionalidades destacadas se encuentra “Encuentra tu Salón”, herramienta que permite a los estudiantes localizar su aula mediante una ruta guiada dentro de las instalaciones. Todo el proyecto fue desarrollado con el framework Flutter, garantizando una aplicación moderna, ágil y de alto rendimiento. Actualmente, formo parte del equipo de la Dirección General de Tecnologías de la Información de la Universidad, donde desarrollo flujos de trabajo automatizados en Power Automate y Microsoft Forms para optimizar el envío y recepción de información generada por los estudiantes. Además, brindo soporte técnico a los usuarios en temas relacionados con correo electrónico institucional y Microsoft Teams</r>
+      </TimeLineElement>
+    </div>
+  </section>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-5" data-aos="fade-right">Certificaciones</h2>
+    <ul class="grid md:grid-cols-2 gap-4" data-aos="fade-up">
+      {certificados.map(cert => (
+        <li class="p-3 rounded-lg shadow hover:shadow-lg transition duration-300 bg-white flex items-center gap-3 cursor-pointer"
+            onclick={`document.getElementById('modal-certificate').classList.remove('hidden'); document.getElementById('modal-iframe').setAttribute('src', '${cert.file}');`}>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" style={`color: ${cert.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span class="text-blue-600 hover:underline">{cert.name}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <div id="modal-certificate" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white rounded-lg w-11/12 md:w-3/4 h-4/5 p-4 relative">
+      <button class="absolute top-2 right-2 text-gray-700 hover:text-gray-900 font-bold text-xl"
+              onclick="document.getElementById('modal-certificate').classList.add('hidden'); document.getElementById('modal-iframe').setAttribute('src', '');">×</button>
+      <iframe id="modal-iframe" class="w-full h-full" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <section class="mb-10">
+    <h2 class="text-3xl font-bold mb-5" data-aos="fade-right">Habilidades</h2>
+    <ul class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+      {skills.map(skill => (
+        <li class="flex items-center gap-3 p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition transform hover:scale-105 cursor-pointer">
+          <img src={skill.icon} alt={skill.name} class="w-8 h-8 transition-transform duration-300 hover:rotate-12 hover:scale-125" />
+          <div class="flex-1">
+            <div class="flex justify-between mb-1">
+              <span>{skill.name}</span>
+              <span>{skill.percent}%</span>
+            </div>
+            <div class="w-full bg-gray-300 rounded-full h-4">
+              <div class="h-4 rounded-full" style={`width: ${skill.percent}%; background-color: ${skill.color};`}></div>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+const { sideBarActiveItemID } = Astro.props;
+const menuItems = [
+  { id: "home", label: "Inicio", href: "/" },
+  { id: "projects", label: "Proyectos", href: "/projects" },
+  { id: "services", label: "Servicios", href: "/services" },
+  { id: "cv", label: "Curriculum", href: "/cv" },
+  { id: "contact", label: "Contáctame", href: "/contacto", external: true },
+];
+---
+
+<ul class="menu grow shrink menu-md overflow-y-auto">
+  {menuItems.map(item => (
+    <li>
+      <a
+        id={item.id}
+        href={item.href}
+        target={item.external ? "_blank" : "_self"}
+        rel={item.external ? "noopener noreferrer" : undefined}
+        class={`py-3 px-4 text-base rounded-md transition-all duration-200
+          ${sideBarActiveItemID === item.id ? "bg-blue-600 text-white font-semibold" : "hover:bg-base-200 hover:text-blue-600"}`}
+      >
+        {item.label}
+      </a>
+    </li>
+  ))}
+</ul>

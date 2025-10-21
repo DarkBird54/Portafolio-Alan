@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+
+const projects = [
+  {
+    title: "SafeTaxi – Instituto de Movilidad de Quintana Roo",
+    img: "/imoveqroo.png",
+    desc: "Aplicación orientada a mejorar la seguridad del transporte público mediante geolocalización, autenticación segura y reportes en tiempo real.",
+    tech: ["Laravel", "MySQL", "Bootstrap", "Azure", "JMeter"],
+    url: "https://github.com/DarkBird54/safe-taxi-web-app",
+  },
+  {
+    title: "UQROO App – Universidad Autónoma de Quintana Roo",
+    img: "/UQROO.png",
+    desc: "Aplicación móvil institucional con inicio de sesión mediante Microsoft Azure y mapa interactivo del campus con Google Maps.",
+    tech: ["Flutter", "Dart", "Azure", "Google Maps API"],
+    url: "https://github.com/XmetalHacksX/appuqroo3",
+  },
+  {
+    title: "Sistema de Control Escolar – Universidad Pedagógica de Chetumal",
+    img: "/UPN CHETUMAL.png",
+    desc: "Sistema web para gestionar inscripciones, calificaciones y roles (alumno, maestro, administrador) con notificaciones automáticas por correo.",
+    tech: ["Laravel", "MySQL", "TailwindCSS"],
+    url: "#",
+  },
+];
+
+const skills = [
+  { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", color: "orange", percent: 95 },
+  { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", color: "blue", percent: 95 },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", color: "yellow", percent: 70 },
+  { name: "Tailwind", icon: "/Tailwind.png", color: "cyan", percent: 90 },
+  { name: "Laravel", icon: "/laravel.png", color: "red", percent: 90 },
+  { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", color: "green", percent: 80 },
+  { name: "AstroJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/astro/astro-original.svg", color: "purple", percent: 80 },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", color: "blue", percent: 80 },
+];
+---
+
+<BaseLayout title="Proyectos" sideBarActiveItemID="projects">
+  <!-- Encabezado -->
+  <section class="py-10 bg-white">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-gray-800 mb-3" data-aos="fade-down" data-aos-duration="800">
+        Proyectos Destacados
+      </h1>
+      <p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">
+        A lo largo de mi trayectoria, he desarrollado soluciones enfocadas en movilidad, educación, gestión institucional y comercio electrónico.
+      </p>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-5 md:px-10">
+      {projects.map(project => (
+        <div
+          class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden cursor-pointer"
+          data-aos="zoom-in"
+          data-aos-duration="800"
+        >
+          <div class="relative overflow-hidden">
+            <img src={project.img} alt={project.title} class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">{project.title}</h3>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">{project.desc}</p>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.tech.map(tech => (
+                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full border border-gray-200 hover:bg-blue-50 transition">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <button
+              onClick={() => window.open(project.url, "_blank")}
+              class="flex items-center gap-2 text-blue-600 font-medium hover:translate-x-1 transition-transform duration-300"
+            >
+              Ver proyecto
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Tecnologías con íconos interactivos -->
+  <section class="py-10 bg-white mt-10 border-t border-gray-100">
+    <h2 class="text-center text-2xl font-semibold text-gray-800 mb-6" data-aos="fade-up">Tecnologías con las que trabajo</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      {skills.map(skill => (
+        <div
+          class={`w-16 h-16 flex items-center justify-center rounded-xl hover:scale-125 hover:rotate-12 transition-transform duration-500`}
+          title={skill.name}
+          data-aos="zoom-in"
+        >
+          <img src={skill.icon} alt={skill.name} class="w-10 h-10" />
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="services">
+  <section class="py-4">
+    <!-- Encabezado -->
+    <div class="text-center mb-10" data-aos="fade-up" data-aos-duration="1000">
+      <h1 class="text-4xl font-bold mb-3">Servicios Profesionales</h1>
+      <p class="text-gray-600 dark:text-gray-300">
+        Soluciones tecnológicas innovadoras: desarrollo de software, aplicaciones móviles y plataformas digitales diseñadas a la medida para optimizar procesos y potenciar la transformación digital en organizaciones y empresas.
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <HorizontalCard
+        title="Desarrollo Web a Medida"
+        img="/imagen.jpg"
+        desc="Creación de sistemas web completos con Laravel y MySQL, incluyendo paneles administrativos, gestión de usuarios y reportes dinámicos."
+        badge="POPULAR"
+        url="#"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      />
+
+      <HorizontalCard
+        title="Aplicaciones Móviles Multiplataforma"
+        img="/movil.jpg"
+        desc="Apps móviles completas en React Native para Android e iOS, con integración a APIs, bases de datos y pasarelas de pago."
+        url="#"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+      />
+
+    <HorizontalCard
+    title="E-commerce Móvil y Web"
+    img="/e-commerce.jpg"
+    desc="Tiendas digitales con carrito de compras, catálogo de productos, proceso de pago seguro y panel de administración."
+    url="#"
+  />
+
+      <!-- Análisis de Datos -->
+  <HorizontalCard
+    title="Automatización y Análisis de Datos"
+    img="/1.jpg"
+    desc="Visualización de datos con Power BI y automatización de reportes, integrando múltiples fuentes de información de manera eficiente."
+    url="#"
+  />
+    </div>
+  </section>
+</BaseLayout>
